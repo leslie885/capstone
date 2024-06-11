@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: db
-          image: leslie885/db:latest
+          image: postgres:10.0-alpine
           ports:
             - containerPort: 5432
               name: db
