@@ -1,3 +1,18 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: db
+  labels:
+    app: db
+spec:
+  ports:
+    - port: 5432
+      targetPort: 5432
+      name: db
+  selector:
+    app: db
+  clusterIP: None
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -15,13 +30,13 @@ spec:
     spec:
       containers:
         - name: db
-          image: leslie885/db:latest
+          image: postgres:10.0-alpine
           ports:
             - containerPort: 5432
               name: db
           volumeMounts:
             - name: db-schema
-              mountPath: /docker-entrypoint-initdb.d  
+              mountPath: /docker-entrypoint-initdb.d
       volumes:
         - name: db-schema
           configMap:

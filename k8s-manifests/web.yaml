@@ -30,7 +30,7 @@ spec:
     spec:
       containers:
         - name: web
-          image: leslie885/web:latest
+          image: bretfisher/wordsmith-web
           imagePullPolicy: Always
           ports:
             - containerPort: 80
