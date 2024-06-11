@@ -1,0 +1,10 @@
+resources:
+  - api.yaml
+  - db.yaml
+  - web.yaml
+configMapGenerator:
+  - name: db-schema
+    files:
+      - ./db/words.sql
+generatorOptions:
+  disableNameSuffixHash: true
