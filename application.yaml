@@ -6,7 +6,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: hhttps://github.com/leslie885/capstone.git
+    repoURL: https://github.com/leslie885/capstone.git
     targetRevision: HEAD
     path: config
   destination:
