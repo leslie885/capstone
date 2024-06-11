@@ -31,7 +31,7 @@ spec:
     spec:
       containers:
         - name: api
-          image: bretfisher/wordsmith-api
+          image: leslie885/api:latest
           imagePullPolicy: Always
           ports:
             - containerPort: 8080
