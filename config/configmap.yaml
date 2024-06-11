@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: words-configmap
+  name:  db-schema
 data:
   words.sql: |
     -- Contents of words.sql

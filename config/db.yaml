@@ -18,12 +18,11 @@ spec:
           image: leslie885/db:latest
           ports:
             - containerPort: 5432
+              name: db
           volumeMounts:
             - name: db-schema
-              mountPath: /docker-entrypoint-initdb.d
+              mountPath: /docker-entrypoint-initdb.d  
       volumes:
         - name: db-schema
           configMap:
-            name: words-configmap
-
-
+            name: db-schema
