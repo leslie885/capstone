@@ -8,7 +8,7 @@ spec:
   source:
     repoURL: https://github.com/leslie885/capstone.git
     targetRevision: HEAD
-    path: kustomization
+    path: config
   destination:
     server: https://kubernetes.default.svc
     namespace: capstone
