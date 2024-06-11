@@ -36,7 +36,7 @@ spec:
               name: db
           volumeMounts:
             - name: db-schema
-              mountPath: /docker-entrypoint-initdb.d
+              mountPath: ./docker-entrypoint-initdb.d
       volumes:
         - name: db-schema
           configMap:
