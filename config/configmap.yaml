@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: init-sql-config
+data:
+  words.sql: |
+    CREATE TABLE IF NOT EXISTS words (
+        id SERIAL PRIMARY KEY,
+        word TEXT NOT NULL
+    );
+
+    INSERT INTO words (word) VALUES ('hello'), ('world'), ('example'), ('word');
