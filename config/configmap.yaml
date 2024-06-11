@@ -1,7 +1,10 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: db-schema
+  name: words-configmap
 data:
   words.sql: |
-    <Contents of your SQL file>
+    -- Contents of words.sql
+    CREATE TABLE ...
+    INSERT INTO ...
+    -- Additional SQL statements

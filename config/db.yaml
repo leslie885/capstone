@@ -1,7 +1,5 @@
 apiVersion: apps/v1
 kind: Deployment
-apiVersion: apps/v1
-kind: Deployment
 metadata:
   name: db
   labels:
@@ -17,7 +15,7 @@ spec:
     spec:
       containers:
         - name: db
-          image:  postgres:10.0-alpine
+          image: leslie885/db:latest
           ports:
             - containerPort: 5432
           volumeMounts:
@@ -26,4 +24,6 @@ spec:
       volumes:
         - name: db-schema
           configMap:
-            name: db-schema
+            name: words-configmap
+
+

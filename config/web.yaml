@@ -30,8 +30,16 @@ spec:
     spec:
       containers:
         - name: web
-          image:  bretfisher/wordsmith-web
+          image: leslie885/web:latest
           imagePullPolicy: Always
           ports:
             - containerPort: 80
               name: web
+          volumeMounts:
+            - name: config-volume
+              mountPath: /path/to/words.sql  # Path in the container where the config will be mounted
+      volumes:
+        - name: db-schema
+          configMap:
+            name: words-configmap  # The name of your ConfigMap containing the config
+

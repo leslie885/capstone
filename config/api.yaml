@@ -8,10 +8,6 @@ spec:
   ports:
     - port: 8080
       targetPort: 8080
-      name: api
-  selector:
-    app: api
-  clusterIP: None
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -31,8 +27,16 @@ spec:
     spec:
       containers:
         - name: api
-          image: bretfisher/wordsmith-api
+          image: leslie885/api:latest
           imagePullPolicy: Always
           ports:
             - containerPort: 8080
               name: api
+          volumeMounts:
+            - name: db-schema
+              mountPath: /path/to/words.sql   # Mount path in your container
+              subPath: words.sql
+      volumes:
+        - name: db-schema
+          configMap:
+            name: words-configmap   # Reference your existing ConfigMap here
