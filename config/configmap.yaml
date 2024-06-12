@@ -3,8 +3,14 @@ kind: ConfigMap
 metadata:
   name: db-init-sql
 data:
-  words.sql: |
-    -- Contents of your words.sql file
+  create_table.sql: |
+    -- SQL script to create the words table
+    CREATE TABLE IF NOT EXISTS words (
+        id SERIAL PRIMARY KEY,
+        word VARCHAR(255)
+    );
+
+  insert_data.sql: |
+    -- SQL script to insert data into the words table
     INSERT INTO words (word) VALUES ('example1'), ('example2'), ('example3');
-    -- Add any further initialization SQL statements here
 
