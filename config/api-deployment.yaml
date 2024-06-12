@@ -20,18 +20,20 @@ spec:
         ports:
         - containerPort: 5000
         env:
-        - name: DATABASE_ADMINDUSERNAME
+        - name: DB_HOST
+          value: db
+        - name: DB_PORT
+          value: "5432"
+        - name: DB_NAME
+          value: your_database_name
+        - name: DB_USERNAME
           valueFrom:
             secretKeyRef:
               name: db-secret
               key: username
-        - name: DATABASE_ADMINDPASSWORD
+        - name: DB_PASSWORD
           valueFrom:
             secretKeyRef:
               name: db-secret
               key: password
-        - name: ME_CONFIG_DB_SERVER
-          valueFrom:
-            configMapKeyRef:
-              name: init-sql-config
-              key: db-url
+       
