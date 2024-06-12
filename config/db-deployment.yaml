@@ -20,15 +20,16 @@ spec:
         ports:
         - containerPort: 5432
         env:
-        - name: POSTGRES_DB
-          value: mydb
-        - name: POSTGRES_USER
-          value: myuser
+        - name: POSTGRES_USERNAME
+          valueFrom:
+            secretKeyRef:
+              name: db-secret
+              key: username
         - name: POSTGRES_PASSWORD
           valueFrom:
             secretKeyRef:
               name: db-secret
-              key: postgres-password
+              key: password
         volumeMounts:
         - name: init-sql
           mountPath: /docker-entrypoint-initdb.d/
