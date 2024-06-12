@@ -33,7 +33,8 @@ spec:
         volumeMounts:
         - name: init-sql
           mountPath: /docker-entrypoint-initdb.d/
-    volumes:
-    - name: init-sql
-      configMap:
-        name: db-init-sql
+      volumes:
+      - name: init-sql
+        configMap:
+          name: db-init-sql
+
