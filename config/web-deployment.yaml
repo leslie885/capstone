@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: web
-        image: docker.io/leslie885/web:189
+        image: docker.io/leslie885/web:191
       
         env:
         - name: API_URL
