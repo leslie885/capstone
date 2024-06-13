@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: db
-        image: docker.io/leslie885/db:latest
+        image: docker.io/leslie885/db:189
         ports:
         - containerPort: 5432
         env:

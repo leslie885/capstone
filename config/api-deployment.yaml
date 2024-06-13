@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: api
-        image: docker.io/leslie885/api:latest
+        image: docker.io/leslie885/api:189
         ports:
         - containerPort: 5000
         env:
