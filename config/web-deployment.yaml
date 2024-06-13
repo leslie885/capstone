@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: web
-        image: leslie885/web:latest
+        image: docker.io/leslie885/web:latest
       
         env:
         - name: API_URL
